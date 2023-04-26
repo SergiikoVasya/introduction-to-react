@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import UserList from "./components/UserList";
 
 function App() {
+  const usersIt = [
+    {
+      content: "Frontend Misha",
+      id: "fe",
+      relations: ["pm", "be", "ds"],
+    },
+    {
+      content: "Design Pasha",
+      id: "ds",
+      relations: ["pm", "fe"],
+    },
+    {
+      content: "Project Manager Sanya",
+      id: "pm",
+      relations: ["ba", "fe", "be", "ds"],
+    },
+    {
+      content: "Backend Grisha",
+      id: "be",
+      relations: ["pm", "fe", "ba"],
+    },
+    {
+      content: "Business Analyst Sveta",
+      id: "ba",
+      relations: ["pm"],
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserList users={usersIt} />
     </div>
   );
 }

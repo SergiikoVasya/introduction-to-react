@@ -1,4 +1,5 @@
 import "../../App.css";
+import "./UserList.css"
 import React, { useState } from "react";
 
 function UserList({ users }) {
@@ -17,23 +18,19 @@ function UserList({ users }) {
 
   return (
     <div className="App">
-      <ol>
         {users.map((item) => (
-          <li
-            key={item.id}
+          <div key={item.id}
             onClick={() => clickElem(item)}
             className={
               rel.includes(item.id)
-                ? "green"
+                ? "box green"
                 : clicked === item.id
-                ? "orange"
-                : ""
-            }
-          >
-            {item.content}
-          </li>
-        ))}
-      </ol>
+                ? "box orange"
+                : "box"
+            }>
+            <p>{item.content}</p>
+
+            </div>))}
     </div>
   );
 }
